@@ -21,6 +21,26 @@
   --shadow-card: 0 1px 0 var(--line), 0 8px 20px -14px rgba(22, 32, 42, 0.35);
 }
 
+/* ===== DARK MODE VARIABLES ADDED HERE ===== */
+[data-theme="dark"] {
+  --paper: #16202a;
+  --paper-raised: #1c2836;
+  --ink: #eff1ec;
+  --ink-soft: #a0acb8;
+  --ink-faint: #6b7a88;
+  --line: #2d3b48;
+  --accent-gold: #e5b553;
+  --accent-pine: #419b84;
+  --accent-pine-dark: #5bc0a4;
+  --shadow-card: 0 1px 0 var(--line), 0 8px 20px -14px rgba(0, 0, 0, 0.6);
+}
+
+/* Smooth fade transition for theme switching */
+body, .card, .catalog, .hero-card, input, textarea, .tab {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* ========================================== */
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -84,6 +104,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 1.4rem;
   letter-spacing: 0.06em;
 }
+
+/* ===== THEME TOGGLE BUTTON STYLES ===== */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  margin-left: auto;
+  margin-right: 1.5rem;
+  color: var(--paper);
+  transition: transform 0.2s ease;
+  padding: 0;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+/* ====================================== */
+
 .catalog-toggle { display: none; }
 
 .catalog-tabs {
@@ -101,7 +139,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: rgba(239, 241, 236, 0.65);
   text-decoration: none;
   border-left: 3px solid transparent;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 .tab:hover { background: rgba(255,255,255,0.05); color: var(--paper); }
 .tab.active {
@@ -320,6 +357,12 @@ main { margin-left: var(--nav-w); }
     background: none; border: none; cursor: pointer; padding: 0;
   }
   .catalog-toggle span { display: block; height: 2px; background: var(--paper); border-radius: 2px; }
+  
+  /* Adjusted toggle spacing for mobile */
+  .theme-toggle {
+    margin-right: 1rem;
+  }
+
   .catalog-tabs {
     flex-direction: column;
     max-height: 0;
