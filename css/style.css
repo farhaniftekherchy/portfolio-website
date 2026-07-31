@@ -35,6 +35,31 @@
   --shadow-card: 0 1px 0 var(--line), 0 8px 20px -14px rgba(0, 0, 0, 0.6);
 }
 
+/* ===== DARK MODE OVERRIDES FOR INVERTED ELEMENTS ===== */
+/* This forces the sidebar to stay dark in dark mode */
+[data-theme="dark"] .catalog {
+  background: var(--paper-raised);
+  color: var(--ink);
+  border-right: 1px solid var(--line);
+}
+[data-theme="dark"] .tab {
+  color: var(--ink-soft);
+}
+[data-theme="dark"] .tab:hover,
+[data-theme="dark"] .tab.active {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.05);
+}
+[data-theme="dark"] .theme-toggle {
+  color: var(--ink);
+}
+[data-theme="dark"] .catalog-toggle span {
+  background: var(--ink);
+}
+[data-theme="dark"] .hero-photo {
+  background: var(--line);
+}
+
 /* Smooth fade transition for theme switching */
 body, .card, .catalog, .hero-card, input, textarea, .tab {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
