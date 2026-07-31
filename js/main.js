@@ -6,7 +6,7 @@
    * google-apps-script/Code.gs (see README) here. Until then the
    * form will still validate but will show a friendly error on submit.
    */
-  const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx76Q-HqaawnlUPX5yTzrBrizrdYRpOVLtdAe4Ow3HpzjZE4OoNBf8wnHa2c71m86_E/exec";
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
