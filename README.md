@@ -1,4 +1,4 @@
-# Alex Rivera — Portfolio Website
+# Farhan Iftekher Chy — Portfolio Website
 
 A single-page personal portfolio built with plain HTML, CSS and JavaScript (no framework, no build step). It uses a "library catalog / index card" visual theme — a fixed side navigation styled like catalog drawer tabs, one per section — to organize a full portfolio: home, about, education, projects, achievements, blogs/vlogs/hobbies, publications, and a working contact form.
 
