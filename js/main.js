@@ -115,16 +115,16 @@
     submitBtn.textContent = "Sending…";
 
     try {
+      // FIX: Format the data as URLSearchParams so Google Apps Script can parse it
+      const formData = new URLSearchParams();
+      formData.append("name", payload.name);
+      formData.append("email", payload.email);
+      formData.append("message", payload.message);
+
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors", // Apps Script web apps don't return CORS headers
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: payload.name,
-          email: payload.email,
-          message: payload.message,
-          submittedAt: new Date().toISOString(),
-        }),
+        body: formData,  // Send the URLSearchParams directly without JSON.stringify
       });
 
       formStatus.textContent = "Thanks! Your message has been sent.";
